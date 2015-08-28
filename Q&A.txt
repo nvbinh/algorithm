@@ -1,0 +1,49 @@
+1. variable scope in loop
+var i = 0,
+	j = 0,
+	array = [];
+
+for (i=0; i++; i<10) {
+	array.push(function() {
+		console.log(i);
+	});
+}
+
+for (i=0; i++; i<10) {
+	array[i]();
+}
+
+//Output?
+
+
+var i = 0,
+	j = 0,
+	array = [];
+
+for (i=0; i<10; i++) {
+	array.push(function() {
+		console.log(i);
+	});
+}
+
+for (i=0; i<10; i++) {
+	array[i]();
+}
+
+//Output
+
+
+2. How browser work in this example
+var testA = new Class();
+console.log(testA);
+console.log(testA.value);
+
+function Class() {
+	this.value = "hello";
+
+	return new Date();
+}
+
+//Output for console? And how the value of this here, it is pointed to variable 'testA'?
+
+3. The security problem in Front End, in browsers (client-side)?
