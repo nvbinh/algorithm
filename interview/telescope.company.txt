@@ -1,3 +1,52 @@
+1> https://stackoverflow.com/questions/41971350/sql-to-rank-teams-based-on-the-matches
+Came across this problem from one of the recent interviews.
+
+Two tables
+
+create table teams {
+    team_id,
+    team_name
+};
+
+create table matches {
+    match_id,
+    host_team,
+    guest_team,
+    host_goals,
+    guest_goals
+};
+The scoring rules are: win = 3 points, draw = 1 points, lose = 0 points.
+
+How do I write a SQL query to rank all teams based on their scores?
+
+For example
+
+team_id | team_name
+  ---------+---------------
+   10      | A
+   20      | B
+   30      | C
+   40      | D
+   50      | E
+matches
+
+match_id | host_team | guest_team | host_goals | guest_goals
+  ----------+-----------+------------+------------+-------------
+   1        | 30        | 20         | 1          | 0
+   2        | 10        | 20         | 1          | 2
+   3        | 20        | 50         | 2          | 2
+   4        | 10        | 30         | 1          | 0
+   5        | 30        | 50         | 0          | 1
+Query should return
+
+team_id | team_name | num_points
+  ---------+-----------+------------
+   20      | B         | 4
+   50      | E         | 4
+   10      | A         | 3
+   30      | C         | 3
+   40      | D         | 0
+
 -- write your code in PostgreSQL 9.4
 SELECT t.team_id, t.team_name, COALESCE(SUM(s.points), 0) as num_points
 FROM teams as t
@@ -19,6 +68,11 @@ ON t.team_id = s.team_id
 GROUP BY t.team_id, t.team_name
 ORDER BY num_points DESC, t.team_id ASC
 
+
+
+2> I am having problem solving a question in python. you would like to find the sentence containing the largest number of words in some given text. text is specified as string S consisting of N characters: letters, spaces, dots(.), question marks(?), and exclamation marks(!) // text can be divided into sentences by splitting it at dots, ?, and !. sentence can be divided into words by splitting at spaces. a sentence without words is valid, but valid word must contain at least one letter.
+
+// S = "We test coders. Give us a try?" should return 4. // S = "forget CVs. . Save time. x x" // return 2
 // you can write to stdout for debugging purposes, e.g.
 // console.log('this is a debug message');
 
@@ -49,6 +103,26 @@ function solution(S) {
     return max > 0 ? max -1 : max;
 }
 
+3> https://stackoverflow.com/questions/39567821/optimize-solution-to-split-an-array-into-3-parts-at-indices-p-q-such-that-cost-i
+The problem is as follows:
+
+An array contains N integers.
+Index starts from 0.
+We have to break this array into 3 parts at breakpoints P and Q, where: 0 < P < Q < N-1.
+P and Q cannot be adjacent, that is: Q-P > 1.
+The cost of this breaking is arr[P]+arr[Q].
+An array can be broken in many ways using various legal combinations of P and Q, each having its own cost. Find the minimal cost.
+
+For example, an array
+
+arr = [5,2,4,6,3,7]
+we can break as follows:
+
+P, Q -----> Cost
+1, 3 -----> 2 + 6 = 8
+1, 4 -----> 2 + 3 = 5
+2, 4 -----> 4 + 3 = 7
+Hence minimum cost = 5.
 
 // you can write to stdout for debugging purposes, e.g.
 // console.log('this is a debug message');
