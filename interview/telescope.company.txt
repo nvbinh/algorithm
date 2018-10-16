@@ -1,0 +1,76 @@
+-- write your code in PostgreSQL 9.4
+SELECT t.team_id, t.team_name, COALESCE(SUM(s.points), 0) as num_points
+FROM teams as t
+LEFT JOIN
+(SELECT host_team as team_id,
+		( case
+        when host_goals > guest_goals then 3            
+        when host_goals = guest_goals then 1
+        else 0 end) as points
+FROM matches
+UNION
+SELECT guest_team as team_id,
+		( case
+        when host_goals < guest_goals then 3            
+        when host_goals = guest_goals then 1
+        else 0 end) as points
+FROM matches) as s
+ON t.team_id = s.team_id
+GROUP BY t.team_id, t.team_name
+ORDER BY num_points DESC, t.team_id ASC
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(S) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let count = 0,
+        max = 0,
+        splitStr = S.split(" ");
+    // Check a sentence contains letters, words instead of .!?
+    if (S.length <= 0) {
+        return 0;
+    }
+    
+    for (let i = 0; i < splitStr.length; i++) {
+        if (splitStr[i].includes(".")
+            || splitStr[i].includes("!")
+            || splitStr[i].includes("?")) {
+                if (count > max) {
+                    max = count;
+                } else {
+                    count = 0;
+                }
+        } else {
+            count++;
+        }
+    }
+    
+    return max > 0 ? max -1 : max;
+}
+
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let cost = 0,
+        minCost = A[1] + A[3];
+    
+    /*
+        0 < P < Q < N - 1
+        Q - P > 1
+        At least, P + 2 >= Q
+    */
+    for (let P = 1; P < A.length - 1; P++) {
+        for (let Q = P + 2; Q < A.length - 1; Q++) {
+            cost = A[P] + A[Q];
+            if (cost < minCost) {
+                minCost = cost;
+            }
+        }
+    }
+    
+    return minCost;
+}

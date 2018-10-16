@@ -16,7 +16,26 @@
 
 	<script src="temp.js"></script>
 
+	<script>
+	var numbers4 = [5, 2, 3, 4, 4, 6, 7, 1, 2, 3];
+
+	function test() {
+	let found = {};
 	
+	for (let i=0; i < numbers4.length; i++) {
+		let num = found[numbers4[i]];
+		console.log('index: ', i, ' num: ', numbers4[i]);
+		console.log('found: ', found);
+		if (num) {
+		return numbers4[num];
+		} else {
+		found[numbers4[i]] = i;
+		}
+	}
+	}
+
+	console.log(test());
+	</script>
 </head>
 <body>
 	<div class="count-function"></div>
