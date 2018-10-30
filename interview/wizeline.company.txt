@@ -1,0 +1,9 @@
+
+We have Physical retail store and online store. They have similar products but difference in prices.
+Find the products with different prices
+["tomato", "grape", "water"] [15.99, 4, 6.88]
+["water", "tomato", "grape", "water"] [15.89, 6, 6.88]
+// Output 2
+findDiff(retailItems, retailPrices, onlineItems, onlinePrices) {
+
+}
