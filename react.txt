@@ -1,7 +1,15 @@
 1. What is the different between Router vs Route in react-router-dom?
+https://stackoverflow.com/questions/43949554/what-is-the-different-between-router-vs-route-in-react-router-dom
 Router
 Router component is what makes the connection between browser location and the react application. It doesn't render anything visible on your page. It just exposes API to interact with location changes of the browser via React context. So any component down the tree can use this API to change their behavior based on location changes in the browser or change the browser location into what they want.
 Router is the abstract for all other specific router components. Practically, we use a specific implementation of it like BrowserRouter, MemoryRouter, and HashRouter which use different methods to manage browser history. Also, Router is usually a top-level component in the component tree and use only one time in the entire application. All other react-router components should be descendants of Router as they can't function without the API which Router provides.
 
 Route
 Route is much simple to explain. It just renders some UI when a location matches the route’s path. So an application can have many Routes based on its layout complexity in different levels of the component tree. Also, Route has some additional props to configure how the match should happen. Route internally use API provided by Router to access the location and decide whether to render the given component or not.
+
+2. React context?
+https://reactjs.org/docs/context.html
+
+3. Recompose middleware
+https://github.com/acdlite/recompose
+A React utility belt for function components and higher-order components.
