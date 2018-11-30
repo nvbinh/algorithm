@@ -13,3 +13,40 @@ https://reactjs.org/docs/context.html
 3. Recompose middleware
 https://github.com/acdlite/recompose
 A React utility belt for function components and higher-order components.
+
+
+4. Explain mapStateToProps
+const mapStateToProps = (state, ownProps) => {
+    return {
+        counter : state.counter,
+        someComponentValue : state.things[ownProps.someIdProp]
+    };
+}
+
+5. Explain mapDispatchToProps
+
+
+6. Using Object Destructuring and Property Shorthand
+export const FinancialInformation = connect(
+  (
+    {
+      getConfigurationsAPIResponse: {
+        configurations: { minIncome } // Get 'minIncome' only from object 'configurations'
+      },
+      form: { customerFinancialInformation: { values } = { values: {} } },
+      getLOVAPIResponse: {
+        data: { loanPurpose = [] }
+      }
+    },
+    ownProps
+  ) => ({})
+)
+
+7. Define a function with inner functions ES6
+Declaration:
+const minRequired = minValue => errorMessage => value =>
+  value >= minValue ? undefined : `${errorMessage} Rp${minValue}`;
+
+Execution:
+// minRequired(minValue)(errorMessage)(value); 
+minRequired(4)('less than default')(2);
