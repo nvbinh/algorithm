@@ -1,0 +1,87 @@
+1. Consider an array of integers, A =a0, a1, a2, ... . We define the absolute difference between two elements, ai and aj (where i != j ), to be the absolute value of |ai - aj|.
+ 
+Given an array of  integers, find and print the minimum absolute difference between any two elements in the array.
+ 
+Trong một mảng số nguyên A = [a0, a1, a2,...] Chúng ta định nghĩa độ khác tuyệt đối giữa 2 phần tử ai và aj(i khác j) là |ai - aj| (giá trị tuyệt đối của ai - aj)
+ 
+Cho một mảng số nguyên, hãy tìm ra độ khác tuyệt đối nhỏ nhất giữa hai phần tử trong mảng.
+ 
+function minAbsoluteDifference(ints) {
+    //Firstly, we need to sort array increasingly
+    ints.sort((a, b) => a - b);
+ 
+    //The array elements is less than two, no the absolute value
+    if (ints.length < 2) {
+        return 0;
+    }
+ 
+    let minDiff = ints[1]-ints[0];
+    for (var i = 2 ; i < ints.length ; i++) {
+        minDiff = Math.min(minDiff, ints[i]-ints[i-1]);
+    }
+ 
+    return minDiff;
+}
+ 
+2. There are N toys and their weight is represented by an array W = [w1, w2, ..., wn]. Each toy costs 1 unit, and if one buys a toy with weight wi , then he/she can get all other toys whose weight lies between wi and wi + 4 (both inclusive) free of cost.
+Find the minimum units with which he/she could buy all of toys.
+ 
+-------------
+Có N đồ chơi với cân nặng tương ứng được lưu trong mảng W = [w1, w2, ..., wn].  Mỗi đồ chơi có giá 1 bitcoin, nếu một người mua một món đồ chơi nặng wi thì người đó được lấy miễn phí các đồ chơi khác có cân nặng trong khoảng từ wi tới wi+ 4 (tính cả wi và wi+4). Tìm số tiền tối thiểu mà người mua phải trả khi mua tất cả số đồ chơi.
+ 
+function toys(w) {
+    //Firstly, we need to sort array increasingly
+    w.sort((a, b) => a - b);
+ 
+    var count = 1;
+    var currentToy = w[0];
+ 
+    for(var i = 1; i < w.length; i++) {
+        //Get free toys
+        if(w[i] > currentToy + 4){
+            count++;
+            currentToy=w[i];
+        }
+    }
+   
+    return count;
+}
+ 
+3. Given a set, S, of n distinct integers, print the size of a maximal subset, S', of S where the sum of any 2 numbers in S' is not evenly divisible by k.
+ 
+static int nonDivisibleSubset(int k, int[] arr) {
+        // Complete this function
+    }
+ 
+ 
+-----------
+Cho tập hợp S bao gồm n số nguyên khác nhau. Tìm tập con lớn nhất S' của S sao cho tổng của 2 phần tử bất kỳ trong S' không chia hết bởi k.
+Viết một hàm nhận vào k và tập S, in ra kích thước của S'
+ 
+// The idea: we have 2 elements a and b. (a + b) % k = 0 then (a%k + b%k)%k = 0.
+// This means a and b can coexist in a non divisible subset when a%k and b%k can coexist in that kind of subset.
+function nonDivisibleSubset(int k, int[] arr) {
+    // Initiate an array with the length of k
+    var r = [];
+    for(var i = 0; i < k; i++)
+        r[i] = 0;
+ 
+    //Get element position where it is able to devide k or not
+    for (var i = 0; i < S.length; i++)
+        r[S[i] % k]++;
+ 
+    var count = Math.min(1, r[0]);
+ 
+    if (k % 2 == 0 && r[k / 2] != 0) {
+        count++;
+    }
+ 
+    for (var j = 1; j <= k / 2; j++)
+    {                                                        
+        if (j != k - j) {
+            count += Math.max(r[j], r[k - j]);
+        }
+    }
+   
+    return count;
+}

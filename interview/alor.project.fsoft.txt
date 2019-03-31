@@ -1,0 +1,168 @@
+1. Difference between localStorage/sessionStorage/cookie?
+Local Storage: no expiration date, client
+Session Storage: store data for a session (until browser/tab closed) (about 5MB), client
+Cookie: data sent to serve in each request (<4KB), expiration is set in client or server
+2. Difference between setTimeout/setInterval? miliseconds
+setTimeout: run once
+setInterval: run always in time
+3. Eventloop in JS
+The event loop on every iteration looks if there's smth in the call stack, and executes it.
+4. Explain the working mechanism of setTimeout?
+JavaScript is a single-threaded scripting language, so it can execute one piece of code at a time (due to its single-threaded nature) each of 
+these blocks of code is “blocking” the progress of other asynchronous events.
+This means that when an asynchronous event occurs (like a mouse click, a timer firing, or an XMLHttpRequest completing) it gets queued up to be executed later.
+
+setTimeout() when you use setTimeout() it will execute only when its turn comes in a queue,
+if an earlier event (of setTimeout) blocks due to some reason setTimeout can be delayed than the specified time in setTimeout() function. 
+during the execution of setTimeout callback function, if any event occurs(e.g click event),it gets queued up to be executed later.
+
+5. What is flex (CSS)? How to use it?
++ flex: 0 1 or auto, The flex property sets the flexible length on flexible items.
++ flexbox: display: flex (includes flex container and flex items)
+https://www.w3schools.com/cssref/css3_pr_flex.asp
+https://internetingishard.com/html-and-css/flexbox/
+
+6. What is the difference between
+div + p {}, Selects all <p> elements where the parent is a <div> element
+div > p {}, Selects all <p> elements that are placed immediately after <div> elements
+https://www.w3schools.com/cssref/css_selectors.asp
+
+7. https://javascript.info/bubbling-and-capturing
+ul.onclick = function(event) {
+    var currentEl = event.target;
+}
+
+8. Calculate the value of 1*2*3*4*5*...*n without using loop
+function test(n) {
+    if (n > 1)
+        return n * test(n-1);
+    return 1;
+}
+
+9. Coding exercise:
+Calculate the Fibo value of n-th element fibo(n)
+function fibonacci(num) {
+  if (num <= 1) return 1;
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
+
+10. How many way do we use to declare function in JS?
+https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
++function declaration
+function calcRectArea(width, height) {
+  return width * height;
+}
++function expression
+var getRectArea = function(width, height) {
+    return width * height;
+}
++Shorthand method definition
+var foo = {
+    a: function() {},
+    b: function() {}
+};
++Arrow function
++Generator function
+function* generator(i) {
+  yield i;
+  yield i + 10;
+}
+console.log(gen.next().value);
+// expected output: 10
+console.log(gen.next().value);
+// expected output: 20
++Function constructor
+var sum = new Function('a', 'b', 'return a + b');
+
+12. Diff between window & document in JS?
+Window is the main JavaScript object root, aka the global object in a browser, also can be treated as the root of the document object model.
+You can access it as window in most of the cases (in the browser);
+
+window.screen is a small information object about physical screen dimensions.
+
+window.document or just document is the main object of the visible (or better yet: rendered) document object model/DOM.
+
+The window is the actual global object.
+
+The screen is the screen, it contains properties about the user's display.
+
+The document is where the DOM is.
+
+13. Write custom CSS for user when on mobile device / phone, hide DIV that has class name of "menu"?
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* Set the background color of body to tan */
+body {
+  background-color: tan;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}
+
+14. ES6 Spread operator 
+The spread syntax is simply three dots: ...
+It allows an iterable to expand in places where 0+ arguments are expected.
+https://codeburst.io/javascript-es6-the-spread-syntax-f5c35525f754
+
+15 $digest, $watch in AngularJS
+https://viblo.asia/p/tim-hieu-ve-apply-va-digest-trong-angularjs-mrDGMJlyezL
+
+16. One-way and two-way binding in AngularJS
+https://stackoverflow.com/questions/38626156/difference-between-one-way-binding-and-two-way-binding-in-angularjs
+
+17. How do you parse cookie in JS, can you write short code?
+document.cookie.split('; ')
+or jquery cookie.js
+
+18. How to write a function that return a Promise?
+function test(url) {
+    return new Promise((resolve, reject) => {
+        const xhttp = XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4) {
+                resolve(xhttp.response);
+            }
+        }
+        xhttp.open('GET', url, true);
+        xhttp.send();
+    })
+}
+
+19 What is cross domain?
+Cross domain request: Requesting content from another host, than where the website is hosted. For example site hosted at google 
+loads a facebook icon from facebook domain.
+https://developer.mozilla.org/vi/docs/Web/HTTP/Access_control_CORS
+
+20. What are the main blocks?
+https://dzone.com/articles/components-of-angular2-architecture
+https://www.quora.com/What-is-the-difference-between-the-different-versions-of-angular
+
+21. Http status code
+
+22. Singleton pattern?
+Which kind of components in Angular 2 are singleton?
+
+23. How do you get the data from backend?
+
+24. Security issue with angular
+
+25. How to call backend API using angular 1
+
+26. ng-repeat performance issue, how to resolve?

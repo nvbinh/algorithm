@@ -1,0 +1,40 @@
+
+Assanrada.company
+20. Store cached of results for second time
+
+function memoize(fun) {
+	var result = null;
+	return (arg) => {
+		if(!result) {
+			result = func(arg);
+		}
+		return result;
+	}
+}
+
+function add(a) {
+	return a + 1;
+}
+
+var memFun = memoize(add);
+
+memFun(1) // Calculate
+memFun(2) // not calculate again
+
+
+// Find different things in 2 objects (a with different values and property difference b and c)
+diff(obj1, obj2) {
+
+}
+
+var obj1 = {
+	a: 3,
+	b: 1
+};
+
+var obj2 = {
+	a: 2,
+	c: 2
+};
+
+diff(obj1, obj2);
