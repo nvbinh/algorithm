@@ -179,4 +179,64 @@ Which kind of components in Angular 2 are singleton?
 this references the object that is executing the current function
 2. primitive types in javascript?
 3. null vs undefined?
-4. arrow function?
+4. arrow function (Fat Arrow?
+New approach writing anonymous function and change the way this binds in functions.
+5. Closures in javascript?
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
+
+6. Pure function?
+7. Prototype?
+When a function is created in JavaScript, JavaScript engine adds a prototype property to the function. This prototype property is an object (called as prototype object) which has a constructor property by default. constructor property points back to the function on which prototype object is a property. We can access the function’s prototype property using the syntax functionName.prototype.
+8. Callback, promise and async await?
+All of them do asynchromous
+A callback is a function that is passed to another function. When the first function is done, it will run the second function.
+The problem with callbacks is it creates something called “Callback Hell.” Basically, you start nesting functions within functions within functions, and it starts to get really hard to read the code.
+
+Promises
+Promises try to fix this nesting problem.
+By using features of arrow functions, we can remove the “wrapper” function. The code becomes cleaner, but still has a lot of unnecessary parenthesis:
+
+function printAll(){
+  printString("A")
+  .then(() => printString("B"))
+  .then(() => printString("C"))
+}
+printAll()
+
+Await is basically syntactic sugar for Promises. It makes your asynchronous code look more like synchronous/procedural code, which is easier for humans to understand.
+async function printAll(){
+  await printString("A")
+  await printString("B")
+  await printString("C")
+}
+printAll()
+
+9 Did you hear about SPA, PWA, Functional Programming and procedure programming?
+
+What is functional programming?
+Functional programming is a programming paradigm — a style of building the structure and elements of computer programs — that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data 
+Pure functions
+Immutability: Unchanging over time or unable to be changed.
+
+10. Immutability
+An immutable object is an object that can’t be modified after it’s created. Conversely, a mutable object is any object which can be modified after it’s created.
+
+11. How Promises Work
+A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
+
+Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
+Rejected: onRejected() will be called (e.g., reject() was called)
+Pending: not yet fulfilled or rejected
+
+/**
+* Vue Project Structure Suggestion
+*/
+1. A base component where all component able to inherits from it
+- base component: We can do some common logics and its child can reuse it
+2. A common service, same same as Vuex. It manages all states.
+We need a place to  manages all api requests, all constants variables, all services, etc.
+A common css, scss for global styles then specific css for each component
+3. Guarantee the principle: SOLID and Loose coupling (Independent)
+4. We need unit testing or TDD?
+5. 
