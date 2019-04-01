@@ -50,3 +50,61 @@ const minRequired = minValue => errorMessage => value =>
 Execution:
 // minRequired(minValue)(errorMessage)(value); 
 minRequired(4)('less than default')(2);
+
+
+CBA’s interview questions for FE Dev
+1.	Introduce yourself
+2.	What do you know about ReactJS?
+a library, a web with many components. Reacts split your web into components (as V in MVC)
+3.	What are different between Angular and ReactJS?
+Angular: framework with routing, state management, native HTML
+ReactJS: a library, support component for represent pages only, external redux for state, JSX instead HTML
+4.	Tell about Lifecycle of React component.
+Each component has a life cycle
+componentWillMount Immediately before initial rendering
+componentDidMount Immediately after initial rendering
+componentWillReceiveProps when component receives new props
+shouldComponentUpdate (return true|false) before rendering, after receiving new props or state
+componentWillUpdate (not return false, but há some parameters) Before redering, after receiving new props or state
+componentWillUnmount before removing component from DOM (destroy)
+5.	Is DOM in ReacJs different DOM HTML?
+6.	How DOM is rendered in page?
+difference in virtual dom and real dom -> update to html dom
+7.	How to make responsive image that does not use CSS?
+<img width="100%"
+8.	Bubbling in JavaScript
+event go from lowest element to its parents, it will fire event from lowest first, then parent if have
+Capturing: from top to the lowest
+9.	Rem and Em  in CSS
+rem relative to root <html> element (default 16px)
+em relative to parent element
+10.	Do you know Waterfall methodology?
+Sequential design, one phase finish, then another phase: plan, build, test, ...
+11.	Tell about Scrum methodology
+small features in process (plan, build, ...), repeat and repeat again ...
+12.	Describe Scrum process
+PO (provide backlog)
+Sprint planning meeting: get sprint backlog
+Daily meeting
+Sprint review meeting
+Restropective meeting
+13.	If we have a changing requirement, and it adds difficult for sprint, how should we do?
+do it next sprint
+14.	Did you use to work for banking projects?
+15.	Do you have any questions for us?
+
+16.
+https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev
+https://medium.com/@arnab.k/difference-between-save-dev-and-save-while-running-npm-50e3c0784153
+--save-dev is used to save the package for development purpose. Example: unit tests, minification..
+--save is used to save the package required for the application to run.
+devDependencies for your app’s dependencies will not be installed when you run npm install in your app
+
+17 Observables vs Promise vs callback
+
+18. DI, Injector as a container provider depedencies
+https://www.youtube.com/watch?v=OFPIGlxunL0
+
+19 Flexbox vs css Grid?
+
+20 higher-order components?

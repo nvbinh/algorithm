@@ -229,6 +229,28 @@ Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
 Rejected: onRejected() will be called (e.g., reject() was called)
 Pending: not yet fulfilled or rejected
 
+
+12. What is a web socket?
+It's a protocol providing full duplex communication channels over a single TCP connection
+
+Traditional HTTP:
+a. Client makes request
+b. Server interprest request, then request info from database if any, database sends infor back to server
+c. server formats and sends response to client
+d. Close connection
+
+Websocket making an HTTP request. It is a persistant connnection between client and server
+Then client, server just send infor without need to confirm again
+
+13. What is http2?
+HTTP2 solved some limitations from http1.1
++ HTTP1 mades a lot of round trips to request a page (many connections)
++ HTTP2 need 1 connections same as web socket
+
+HTTP2 Server Push:
+You request index.html and if index.html contains index.css, index.js
+Server will automatically response all of these (html, css, js) back to client
+
 /**
 * Vue Project Structure Suggestion
 */
@@ -284,3 +306,7 @@ when html render?
 
 what is Single File Component?
 
+
+
+A base component has some common service: http service
+other component can extend and use these services
