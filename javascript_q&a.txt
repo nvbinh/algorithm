@@ -240,3 +240,47 @@ A common css, scss for global styles then specific css for each component
 3. Guarantee the principle: SOLID and Loose coupling (Independent)
 4. We need unit testing or TDD?
 5. 
+
+
+
+Canđiate
+Phan Tran Trung Chanh
+
+Callback, promise and async await?
+
+Javascript `this` keyword?
+
+primitive types in javascript?
+
+arrow function (Fat Arrow?
+
+Pure function?
+
+Did you hear about SPA, PWA, Functional Programming and procedure programming?
+
+setTimeout have to wait? why?
+
+what is DOM?
+
+What is Virtual-Dom?
+
+What are dynamic components?
+
+What is vuex?
+
+What are the major components of State Management Pattern?
+
+scss scoped
+correct
+
+Is it possible to mix both local and global styles?
+correct
+
+Vue instance vs vue component?
+
+Vue component life cycle?
+
+when html render?
+
+what is Single File Component?
+

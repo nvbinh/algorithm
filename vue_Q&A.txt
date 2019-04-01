@@ -1,0 +1,116 @@
+Let me summary:
++ BE knowledge
++ Javascript
++ React or Vue
++ English
+
+
+1. What are dynamic components?
+The dynamic component is used to dynamically switch beetween multiple components using element and pass data to v-bind:is attribute. Let's create a dynamic component to switch between different pages of a website,
+<component v-bind:is="currentPage">
+       <!-- component changes when currentPage changes! -->
+       <!-- output: Home -->
+   </component>
+
+2. What is vuex? state management?
+Vuex is a state management pattern + library (Flux-inspired Application Architecture) for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+
+3. What are the major components of State Management Pattern?
+The state, which is the source of truth that drives our app
+The view, which is just a declarative mapping of the state
+The actions, which are the possible ways the state could change in reaction to user inputs from the view. Let us take a counter example which follows state management pattern with the above 3 components,
+
+4. What is scoped CSS?
+Scoped CSS is a mechanism in VueJS Single File Components(SFC) that prevents styles from leaking out of the current component and affecting other unintended components on your page. i.e, When a <style> tag has the scoped attribute, its CSS will apply to elements of the current component only. It uses PostCSS to transform scoped css to plain CSS. Let's take an example usage of scoped css,
+
+
+ <style scoped>
+ .greeting[data-v-f3f3eg9] {
+   color: green;
+ }
+ </style>
+5. Is it possible to mix both local and global styles?
+Yes, You can include both scoped and non-scoped styles in the same component. If you don't mention scoped attribute then it will become global style.
+
+<style>
+/* global styles */
+</style>
+
+<style scoped>
+/* local styles */
+</style>
+
+6. How do you use deep selectors?
+In scoped css, if you need to modify the styles of a child component using deep selectors(i,e from parent scoped css) then you need to use >>> combinator. For example, the scoped deep selector on parent scoped css would be as below,
+
+<style scoped>
+.class1 >>> .class2 { /* ... */ }
+</style>
+It will be converted as,
+
+.class1[data-v-f3f3eg9] .class2 { /* ... */ }
+
+7. What is the difference between v-show and v-if directives?
+Below are some of the main differences between between v-show and v-if directives,
+
+v-if only renders the element to the DOM if the expression passes whereas v-show renders all elements to the DOM and then uses the CSS display property to show/hide elements based on expression.
+v-if supports v-else and v-else-if directives whereas v-show doesn't support else directives.
+v-if has higher toggle costs while v-show has higher initial render costs. i.e, v-show has a performance advantage if the elements are switched on and off frequently, while the v-if has the advantage when it comes to initial render time.
+v-if supports <template> tab but v-show doesn't support.
+
+8. What is vue instance?
+Every Vue application works by creating a new Vue instance with the Vue function. Generally the variable vm (short for ViewModel) is used to refer Vue instance. You can create vue instance as below,
+
+var vm = new Vue({
+  // options
+})
+As mentioned in the above code snippets, you need to pass options object. You can find the full list of options in the API reference.
+
+9. What are the major features of VueJS?
+Below are the some of major features available with VueJS
+
+Virtual DOM: It uses virtual DOM similar to other existing frameworks such as ReactJS, Ember etc. Virtual DOM is a light-weight in-memory tree representation of the original HTML DOM and updated without affecting the original DOM.
+Components: Used to create reusable custom elements in VueJS applications.
+Templates: VueJS provides HTML based templates that bind the DOM with the Vue instance data
+Routing: Navigation between pages is achieved through vue-router
+Light weight: VueJS is light weight library compared to other frameworks
+
+
+
+12 what is Single File Component?
+A Vue component can be declared in a JavaScript file (.js) like this:
+
+Vue.component('component-name', {
+  /* options */
+})
+
+or also:
+
+new Vue({
+  /* options */
+})
+or it can be specified in a .vue file.
+
+The .vue file is pretty cool because it allows you to define
+
+JavaScript logic
+HTML code template
+CSS styling
+all in just a single file, and as such it got the name of Single File Component.
+
+10 Vue instance lyfecycle? optional
+
+11 component lyfecycle?
+https://vuejs.org/v2/guide/instance.html
+
+13 MVVM pattern?
+All Vue components are also Vue instances, and so accept the same options object (except for a few root-specific options).
+Although not strictly associated with the MVVM pattern, Vue’s design was partly inspired by it. 
+
+Each Vue instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their own code at specific stages.
+https://vuejs.org/v2/guide/instance.html
+
+14. one-way and Two-way data binding
+Okay, so that’s one-way data binding i.e. binding a JS variable to the DOM. Two-way binding is when data is also bound from the DOM back to JS.
+v-model input is 2 ways
+v-bind is one way
