@@ -1,0 +1,112 @@
+# Coding Test Review - Steve
+
+## Backend test: 6/10
+
+- Meet requirements
+- Have coding standard, conventions and clear folder structure
+- Generally, API work correctly
+- Set up, apply Spring Boot
+
+## Frontend test: 8/10
+
+- Design looks nice
+- No bugs
+- Meet requirements
+- Good document (README)
+- Able to do optional tasks
+- Impression note
+
+---
+
+# 1st Interview Question
+
+[Result](https://www.notion.so/a99df9bb3ba9423eaf76f5037aec5c5e)
+
+## General Question
+
+Q. Why did you apply I-ON
+
+A. He doesn't know well
+
+Q. What is the best memories in related experience
+
+A. 
+
+Q. What is your 2 strength ability, weakness
+
+A. Research new things: read book, subscribe developers, receive feedback, weakness: sometimes lazy
+
+Q. Why did you leaving previous company
+
+A. bankrupt
+
+Q. How much is your expectation Salary
+
+A. USD 2116 (He said 40 millions VND NET → 1717 USD net), 
+
+세금 제외 4000만동 원하고 스티브 계산 결과 모든 비용 포함 2116 USD로 산출되었습니다.
+
+Q. (Optional) How much did you receive the salary from previous company?
+
+A. USD 1832 (~35 millions VND NET → 1502.98 USD net)
+
+*if have related experienced
+
+→(William) If we make a conclude to hire him, we should request reference such as last 3 months payslip or pay summary or bank statements. 과거 급여에 관한 레퍼런스 체크가 필요할 것 같습니다. 최근 3개월 급여 혹은 총 급여 써머리, 불가능 할 경우 은행 송금 이력 확인이 필요합니다.
+
+## Tech Question
+
+ReactJS
+
+1. Virtual Dom: okay
+2. HOC: okay
+3. ReactHooks: useState, useEffect: okay
+4. React Life Cycle: okay
+5. Pure component vs component: fine
+6. Redux: Good
+7. Data Flow Redux: good
+8. Mobx vs Redux: okay
+
+Vanila JS
+
+1. This keyword: well
+2. Design Patterns; good
+3. Inheritance: good
+4. SPA vs PWA: Good
+5. Improve a website performance: Well
+6. Infinite scroll, 1000 records: Not need to list all once time: okay
+7. Hoisting: okay
+8. Scope: Fine
+9. Vuejs vs ReatJS: okay.
+
+Java
+
+1. How does a website work? Okay
+2. HTTP vs HTTPS: okay
+3. Know nginx
+4. Explain REST api? okay. Any problems of REST api? Don’t know
+5. REST api vs GraphQL? Don’t know GraphQL
+6. Single thread vs Multiple thread? Okay
+7. What is a thread? Fine
+8. serverless? Just write code, no need db system
+9. Microservices? Fine
+10. How garbage collection works?
+11. Spring boot architecture: fine, he has experience in Spring MVC
+
+Database
+
+1. How many types of relationships and explain each relationship? 1-1, 1-N, N-N Good
+2. How to organize 2 tables have relationship many - many?
+3. How improve query 1 millions records in many tables: index, partition, shading, cache
+
+Devops/CICD:
+
+1. He has knowledge
+
+# Reference Check
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa53730b-3c63-4a71-b7a5-36628d9c2fe6/NTN2.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa53730b-3c63-4a71-b7a5-36628d9c2fe6/NTN2.jpg)
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7298f7f9-0634-4873-aa53-c8570a7b36cf/NTNam1.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7298f7f9-0634-4873-aa53-c8570a7b36cf/NTNam1.jpg)
+
+[Untitled](https://www.notion.so/0930ad052f494b1aa101da94dcf473f7)
