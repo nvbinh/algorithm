@@ -64,6 +64,8 @@ var Memoizing = (function(){
 })();
 
 // Output: 2,1
+/* (function () {})();cái này là hàm tự gọicode thì đọc từ trên xuốngnhưng vào hàm tự gọi thì nó bị delay 1 khoảng timenên cái function f() ở dưới được gọi trướcvà in ra 2
+*/
 (function () {
   f();
   f = function () {
