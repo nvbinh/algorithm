@@ -38,3 +38,41 @@ var obj2 = {
 };
 
 diff(obj1, obj2);
+
+
+
+var Memoizing = (function(){
+	function cacher (f) {
+	    var cache = {};
+	    return function (){
+		var key = JSON.stringify(arguments);
+		if (cache[key]) {
+		    return cache[key];
+		} else {
+		    console.log('loading ...');
+		    var val = f.apply(this, arguments);
+		    cache[key] = val;
+		    return val;
+		}
+	    }
+	}
+	return {
+	    memo: function (f) {
+		return cacher(f);
+	    }
+	}
+})();
+
+// Output: 2,1
+(function () {
+  f();
+  f = function () {
+    console.log(1);
+  };
+})();
+
+function f() {
+  console.log(2);
+}
+
+f();
